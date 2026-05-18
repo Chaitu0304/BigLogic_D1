@@ -1,241 +1,122 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, PlayCircle, Zap, Users, ShieldCheck, Clock, Target, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import { useTheme } from "@/components/ThemeProvider";
+import { ArrowRight, PlayCircle, BarChart3, Users, DollarSign } from "lucide-react";
 
 export const Hero = () => {
-  const navigate = useNavigate();
-  const { theme } = useTheme();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-20 pb-10">
-      
-      {/* Background Decorations */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-gradient-to-br from-indigo-500/10 to-transparent blur-3xl rounded-full" />
-        <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-gradient-to-tr from-purple-500/10 to-transparent blur-3xl rounded-full" />
-        
-        {/* Subtle Grid / Lines */}
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
-          style={{ backgroundImage: `radial-gradient(circle at 2px 2px, ${theme === 'dark' ? 'white' : 'black'} 1px, transparent 0)`, backgroundSize: '40px 40px' }} 
+    <section className="relative min-h-[90vh] flex items-center pt-[140px] md:pt-[180px] pb-12 overflow-hidden bg-surface-abyss">
+      {/* Background Image & Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 mix-blend-luminosity transition-opacity duration-1000"
+          style={{ backgroundImage: `url('/images/mercury_hero_bg.png')` }}
         />
-        
-        {/* Animated Line Effect */}
-        <svg className="absolute top-1/4 right-0 w-full h-full opacity-20" viewBox="0 0 1000 1000" fill="none">
-          <motion.path 
-            d="M1000 100 C 800 150, 600 50, 400 200 S 200 350, 0 300" 
-            stroke="url(#gradient-line)" 
-            strokeWidth="1"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-          />
-          <defs>
-            <linearGradient id="gradient-line" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="transparent" />
-              <stop offset="50%" stopColor="#6366f1" />
-              <stop offset="100%" stopColor="transparent" />
-            </linearGradient>
-          </defs>
-        </svg>
+        {/* Gradients to fade into background */}
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-abyss via-surface-abyss/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface-abyss via-surface-abyss/50 to-transparent" />
       </div>
 
-      <div className="container relative z-10 px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
-          
-          {/* Left Column: Content */}
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-start text-left max-w-2xl"
+      <div className="container px-4 md:px-8 relative z-10 max-w-7xl mx-auto flex flex-col gap-24">
+        <div className="max-w-4xl space-y-10">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-6"
           >
-            {/* Badge */}
-            <motion.div variants={itemVariants} className="mb-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/50">
-              <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white dark:bg-indigo-900/50 shadow-sm border border-indigo-100 dark:border-indigo-800">
-                <Sparkles className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
-                <span className="text-xs font-bold text-indigo-900 dark:text-indigo-100">AI-Powered Construction Intelligence</span>
-              </div>
-              <span className="text-xs font-medium text-indigo-600/80 dark:text-indigo-400/80 px-2">v1.0 Live</span>
-            </motion.div>
+            {/* Eyebrow */}
+            <div className="inline-flex items-center space-x-2 mt-30 px-3 py-1.5 rounded-full bg-surface-surface/50 border border-slate-lead/30 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-mercury-blue animate-pulse" />
+              <span className="text-caption font-bold text-starlight tracking-widest uppercase ">
+                The #1 Platform for Reconstruction Companies
+              </span>
+            </div>
 
             {/* Headline */}
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.05] text-foreground">
-              From Xactimate <br />
-              to Execution. <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
-                In Seconds.
-              </span>
-            </motion.h1>
+            <h1 className="text-display font-display font-medium text-starlight leading-tight">
+              Stop Paying 10 People <br className="hidden md:block" />
+              <span className="text-mercury-blue">to Do What One Platform Can.</span>
+            </h1>
 
-            {/* Subtext */}
-            <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Turn messy insurance data into structured workflows, material insights, and ready-to-use documents.
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
-              <Button 
-                onClick={() => navigate("/login")} 
-                size="lg" 
-                className="h-14 px-8 text-base rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 text-white shadow-xl shadow-indigo-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] font-bold"
-              >
-                <Zap className="mr-2 w-5 h-5 fill-current" />
-                Start Free Automation
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="h-14 px-8 text-base rounded-2xl border-2 border-border bg-background/50 backdrop-blur-sm hover:bg-accent transition-all group"
-              >
-                <PlayCircle className="mr-2 w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                See How It Works
-              </Button>
-            </motion.div>
-
-            {/* Features */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-x-8 gap-y-3">
-              {[
-                "No setup required",
-                "99% accuracy",
-                "Used by contractors & adjusters"
-              ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-2 group">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center border border-indigo-200 dark:border-indigo-800 transition-colors group-hover:bg-indigo-200 dark:group-hover:bg-indigo-800">
-                    <Check className="w-3 h-3 text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                  <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">{feature}</span>
-                </div>
-              ))}
-            </motion.div>
+            {/* Subheadline */}
+            <p className="text-body-sm md:text-body text-silver max-w-2xl font-light leading-relaxed">
+              BIGlogic.ai runs your entire reconstruction business — estimates, contracts, compliance, documents, billing, and communication — automatically. So you can focus on winning more jobs.
+            </p>
           </motion.div>
 
-          {/* Right Column: Image */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-            className="relative lg:h-[600px] flex items-center justify-center lg:justify-end"
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
           >
-            {/* Background Glow for Image */}
-            <div className="absolute inset-0 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[100px] rounded-full scale-110 pointer-events-none" />
-            
-            {/* The Image Wrapper */}
-            <div className="relative z-10 w-full max-w-[650px] group">
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative"
-              >
-                {/* Visual accent lines around image */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 border-t-2 border-r-2 border-indigo-500/20 rounded-tr-[40px] pointer-events-none" />
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 border-b-2 border-l-2 border-indigo-500/20 rounded-bl-[40px] pointer-events-none" />
-                
-                <img 
-                  src="/hero-img.png" 
-                  alt="BigLogic AI Dashboard" 
-                  className="w-full h-auto drop-shadow-[0_20px_50px_rgba(79,70,229,0.2)] rounded-3xl border border-white/10"
-                />
-              </motion.div>
-            </div>
+            <button aria-label="Start free trial" className="group relative inline-flex items-center justify-center h-14 px-10 rounded-full bg-mercury-blue text-pure-white font-medium text-body-sm transition-all hover:bg-opacity-90 hover:shadow-[0_0_20px_rgba(82,102,235,0.4)] animate-pulse focus-visible:outline focus-visible:outline-2 focus-visible:outline-mercury-blue">
+              Start My Free Trial — No Credit Card Needed
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+
+            <button className="inline-flex items-center text-silver hover:text-mercury-blue transition-colors text-body-sm font-medium">
+              <PlayCircle className="w-5 h-5 mr-2 text-mercury-blue" />
+              See how it works in 2 minutes
+            </button>
           </motion.div>
         </div>
 
-        {/* Bottom Stats Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+        {/* Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="mt-12 lg:mt-0 p-8 rounded-[2.5rem] bg-card/30 backdrop-blur-md border border-border/50 shadow-2xl shadow-indigo-500/5"
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="pt-40 grid grid-cols-1 md:grid-cols-3 gap-24 border-t border-slate-lead/20 w-full"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-center">
-            
-            {/* Trusted By */}
-            <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground uppercase">Trusted by modern teams</span>
-              <div className="flex -space-x-3 overflow-hidden">
-                {[1, 2, 3, 4].map((i) => (
-                  <img
-                    key={i}
-                    className="inline-block h-10 w-10 rounded-full ring-2 ring-background object-cover"
-                    src={`https://i.pravatar.cc/100?u=user${i}`}
-                    alt={`Team member ${i}`}
-                  />
-                ))}
-                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-600 text-white text-xs font-bold ring-2 ring-background">
-                  +850
+          {[
+            {
+              icon: BarChart3,
+              stat: "73%",
+              text: "Average reduction in admin work reported by users in first 30 days",
+            },
+            {
+              icon: DollarSign,
+              stat: "$2,400+",
+              text: "Saved per month on average vs. hiring extra office staff",
+            },
+            {
+              icon: Users,
+              stat: "1 person",
+              text: "Can now run what took a full team using BIGlogic's automation",
+            },
+          ].map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="group relative flex flex-col items-center justify-center text-center p-24 bg-surface-surface/20 hover:bg-surface-surface/40 backdrop-blur-md rounded-3xl border border-slate-lead/10 hover:border-mercury-blue/30 shadow-[0_4px_20px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(21,128,61,0.08)] dark:hover:shadow-[0_8px_30px_rgba(21,128,61,0.2)] transition-all duration-300"
+              >
+                {/* Glowing background accent on hover */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-mercury-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="space-y-16 relative z-10 flex flex-col items-center justify-center">
+                  <div className="w-40 h-40 rounded-2xl bg-mercury-blue/10 dark:bg-mercury-blue/15 border border-mercury-blue/20 flex items-center justify-center text-mercury-blue group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-20 h-20" />
+                  </div>
+
+                  <div className="space-y-8 flex flex-col items-center justify-center">
+                    <h3 className="text-heading-sm md:text-heading font-display font-medium text-starlight leading-none">
+                      {item.stat}
+                    </h3>
+                    <p className="text-caption text-silver group-hover:text-starlight transition-colors duration-300 font-light leading-relaxed max-w-[280px] mx-auto">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <span className="text-xs font-semibold text-foreground">Contractors & Adjusters</span>
-            </div>
-
-            {/* Stat 1 */}
-            <div className="flex items-center gap-4 lg:justify-center border-l-0 lg:border-l border-border/50 pl-0 lg:pl-8">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 shrink-0">
-                <Users className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold">850+</div>
-                <div className="text-xs text-muted-foreground font-medium">Active Teams</div>
-              </div>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="flex items-center gap-4 lg:justify-center lg:border-l border-border/50 lg:pl-8">
-              <div className="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold">1M+</div>
-                <div className="text-xs text-muted-foreground font-medium">Estimates Processed</div>
-              </div>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="flex items-center gap-4 lg:justify-center lg:border-l border-border/50 lg:pl-8">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
-                <Clock className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold">60 Sec</div>
-                <div className="text-xs text-muted-foreground font-medium">Avg. Processing Time</div>
-              </div>
-            </div>
-
-            {/* Stat 4 */}
-            <div className="flex items-center gap-4 lg:justify-center lg:border-l border-border/50 lg:pl-8">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
-                <Target className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold">99.8%</div>
-                <div className="text-xs text-muted-foreground font-medium">Extraction Accuracy</div>
-              </div>
-            </div>
-
-          </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
-
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-20" />
     </section>
   );
 };

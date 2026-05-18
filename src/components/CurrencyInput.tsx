@@ -38,7 +38,7 @@ export const CurrencyInput = ({ value, onChange, className, disabled }: Currency
     }, [value]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let input = e.target.value;
+        const input = e.target.value;
 
         // Allow digits, dots, commas, and negative sign
         // Remove invalid characters immediately

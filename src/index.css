@@ -2,98 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-#root {
-  min-height: 100vh;
-}
-
 @layer base {
   :root {
-    /* Luxury White + Black Theme */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Premium Organic Sand Linen Custom Palette (Light Mode) */
+    --color-mercury-blue: #15803D; /* Deep Forest Green */
+    --color-ghost-blue: #DCFCE7; /* Soft Green Accent */
+    --color-deep-space: #F4F1EA; /* Premium Warm Sand Beige (Abyss) */
+    --color-midnight-slate: #FAF9F6; /* Alabaster Warm White (Surface) */
+    --color-graphite: #EAE5DB; /* Desaturated Sandstone (Interactive) */
+    --color-lead: #DFD9CE; /* Desert Clay (Borders) */
+    --color-starlight: #1C1B19; /* Organic Charcoal Black (Primary Text) */
+    --color-silver: #706E66; /* Lichen Gray (Secondary Text) */
+    --color-pure-white: #FFFFFF;
+    
+    /* Typography — Font Families */
+    --font-arcadiadisplay: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-arcadia: 'Outfit', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    /* Typography — Scale */
+    --text-caption: 12px;
+    --leading-caption: 1.5;
+    --tracking-caption: 0.24px;
+    --text-body-sm: 14px;
+    --leading-body-sm: 1.5;
+    --tracking-body-sm: 0.28px;
+    --text-body: 16px;
+    --leading-body: 1.5;
+    --tracking-body: 0.16px;
+    --text-subheading: 18px;
+    --leading-subheading: 1.4;
+    --text-heading-sm: 21px;
+    --leading-heading-sm: 1.35;
+    --text-heading: 32px;
+    --leading-heading: 1.2;
+    --text-heading-lg: 49px;
+    --leading-heading-lg: 1.15;
+    --text-display: 65px;
+    --leading-display: 1.1;
+    --tracking-display: 0.65px;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    /* Spacing */
+    --spacing-unit: 4px;
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-20: 20px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-56: 56px;
+    --spacing-72: 72px;
+    --spacing-80: 80px;
+    --spacing-112: 112px;
+    --spacing-128: 128px;
 
-    /* Primary: Strong Black */
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 0% 20%;
+    /* Layout */
+    --page-max-width: 1200px;
+    --section-gap: 100px;
+    --element-gap: 24px;
 
-    /* Secondary: Subtle Gray */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    /* Border Radius */
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-3xl: 32px;
+    --radius-3xl-2: 40px;
 
-    /* Muted: Soft backgrounds */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    /* Named Radii */
+    --radius-cards: 0px;
+    --radius-inputs: 32px;
+    --radius-buttons: 32px;
+    --radius-containers: 4px;
 
-    /* Accent: Subtle interaction state */
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 0%;
+    /* Surfaces */
+    --surface-abyss: var(--color-deep-space);
+    --surface-surface: var(--color-midnight-slate);
+    --surface-interactive: var(--color-graphite);
 
-    /* Success state - Muted Green */
+    /* Shadcn HSL Values (Light Mode Sandstone) */
+    --background: 43 23% 94%; /* Warm Sand Beige */
+    --foreground: 30 7% 10%; /* Charcoal Black */
+
+    --card: 40 20% 98%;
+    --card-foreground: 30 7% 10%;
+
+    --popover: 40 20% 98%;
+    --popover-foreground: 30 7% 10%;
+
+    --primary: 142 72% 29%; /* Forest Green */
+    --primary-foreground: 60 30% 98%; /* Warm Ivory */
+    --primary-hover: 142 63% 24%;
+
+    --secondary: 142 72% 95%; 
+    --secondary-foreground: 142 72% 29%;
+
+    --muted: 40 10% 92%;
+    --muted-foreground: 40 6% 45%;
+
+    --accent: 40 10% 92%;
+    --accent-foreground: 30 7% 10%;
+
     --success: 142 70% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Warning state - Muted Amber */
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    /* Destructive - Muted Red */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs - Crisp/Thin */
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
-    --ring: 0 0% 0%;
+    --border: 40 12% 84%;
+    --input: 40 12% 84%;
+    --ring: 142 72% 29%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     /* Sidebar colors */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 40%;
-    --sidebar-primary: 0 0% 0%;
+    --sidebar-background: 40 20% 98%;
+    --sidebar-foreground: 30 7% 10%;
+    --sidebar-primary: 142 72% 29%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 0%;
-    --sidebar-border: 0 0% 92%;
-    --sidebar-ring: 0 0% 0%;
+    --sidebar-accent: 40 10% 92%;
+    --sidebar-accent-foreground: 30 7% 10%;
+    --sidebar-border: 40 12% 84%;
+    --sidebar-ring: 142 72% 29%;
 
-    /* Shadows - Soft and diffused */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05);
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Premium Volcanic Dark Bronze-Beige (Dark Mode) */
+    --color-mercury-blue: #15803D; /* Forest Green */
+    --color-ghost-blue: #14532D; /* Soft Dark Forest Green */
+    --color-deep-space: #0F0F0E; /* Volcanic Obsidian Clay (Abyss) */
+    --color-midnight-slate: #161614; /* Volcanic Ash (Surface) */
+    --color-graphite: #232320; /* Dark Sandstone (Interactive) */
+    --color-lead: #2E2E2A; /* Basalt Gray (Borders) */
+    --color-starlight: #F6F5F2; /* Warm Ivory (Primary Text) */
+    --color-silver: #908E88; /* Warm Platinum (Secondary Text) */
+    --color-pure-white: #FFFFFF;
 
-    --card: 240 10% 4.9%;
-    --card-foreground: 0 0% 98%;
+    --surface-abyss: var(--color-deep-space);
+    --surface-surface: var(--color-midnight-slate);
+    --surface-interactive: var(--color-graphite);
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    /* Shadcn HSL Values (Dark Mode Obsidian) */
+    --background: 60 7% 6%; /* Obsidian Clay */
+    --foreground: 45 10% 96%; /* Warm Ivory */
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --card: 60 6% 9%; /* Volcanic Ash */
+    --card-foreground: 45 10% 96%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --popover: 60 6% 9%;
+    --popover-foreground: 45 10% 96%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --primary: 142 72% 29%;
+    --primary-foreground: 45 10% 96%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --secondary: 60 6% 14%;
+    --secondary-foreground: 45 10% 96%;
+
+    --muted: 60 6% 14%;
+    --muted-foreground: 60 4% 60%;
+
+    --accent: 60 6% 14%;
+    --accent-foreground: 45 10% 96%;
 
     --success: 142 70% 45%;
     --success-foreground: 0 0% 100%;
@@ -102,20 +178,21 @@ All colors MUST be HSL.
     --warning-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 45 10% 96%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 60 5% 18%;
+    --input: 60 5% 18%;
+    --ring: 142 72% 29%;
 
-    --sidebar-background: 240 10% 3.9%;
-    --sidebar-foreground: 240 5% 64.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Sidebar colors */
+    --sidebar-background: 60 7% 6%;
+    --sidebar-foreground: 60 4% 60%;
+    --sidebar-primary: 142 72% 29%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 5% 64.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 240 4.9% 83.9%;
+    --sidebar-accent: 60 6% 14%;
+    --sidebar-accent-foreground: 45 10% 96%;
+    --sidebar-border: 60 5% 18%;
+    --sidebar-ring: 142 72% 29%;
   }
 }
 
@@ -124,11 +201,51 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    background-color: var(--color-deep-space) !important;
+    transition: background-color 0.3s;
+  }
+
+  .dark html {
+    background-color: var(--color-deep-space) !important;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-arcadia), sans-serif;
+    position: relative;
+  }
+
+  /* Global Premium Organic Film Noise Overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.022'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-arcadiadisplay), sans-serif;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
 }
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    text-transform: uppercase;
+  }
+}
+
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -139,11 +256,41 @@ All colors MUST be HSL.
   }
 }
 
-/* Global scrollbar hide */
-* {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent !important;
 }
-*::-webkit-scrollbar {
-  display: none;
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A1A1AA; /* Concrete Gray for Light Mode */
+  border-radius: 9999px;
+  transition: background 0.3s;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-mercury-blue); /* Signature Forest Green for Dark Mode */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #71717A;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #166534; /* Darker Green hover */
+}
+
+/* Enable standard scrollbar width for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #A1A1AA transparent;
+}
+
+.dark * {
+  scrollbar-color: var(--color-mercury-blue) transparent;
 }

@@ -1,206 +1,116 @@
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle, FileText, Shield, Zap } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../ThemeProvider';
+import { useState } from "react";
+import { ChevronDown, HelpCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Faq = () => {
-    const { theme } = useTheme();
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+const faqData = [
+  {
+    question: "Do I need to be tech-savvy to use BIGlogic?",
+    answer: "Not at all. BIGlogic was designed for people who run construction businesses — not tech companies. If you can use a smartphone, you can use BIGlogic. Most users are fully active within one day."
+  },
+  {
+    question: "What exactly is an Xactimate estimate?",
+    answer: "Xactimate is the industry-standard software insurance adjusters use to calculate damage claims. BIGlogic automatically parses these PDFs so you don't have to spend hours re-typing estimates manually."
+  },
+  {
+    question: "Will this replace my existing accounting software?",
+    answer: "No. BIGlogic synchronizes directly with QuickBooks Online. BIGlogic automates operational management, material lists, and contract drafts, while QuickBooks keeps handling the books."
+  },
+  {
+    question: "What happens to my data? Is it safe?",
+    answer: "Your data is stored in secure, enterprise-grade Amazon Web Services (AWS) data stores. All data in transit and at rest is completely encrypted. You own your company's documents entirely."
+  },
+  {
+    question: "How long does it take to set up?",
+    answer: "Most restoration businesses are fully operational within one business day. There is no complicated installation, and every Professional plan comes with standard 1-on-1 team onboarding support."
+  },
+  {
+    question: "Can my whole team use it, or just one person?",
+    answer: "Your entire team can use it. Every BIGlogic tier offers role-based access limits. Your estimators, office admins, PMs, and field crews get their own secure profiles."
+  },
+  {
+    question: "What if I don't like it? Can I get a refund?",
+    answer: "Yes. We offer a 30-day money-back guarantee. If BIGlogic doesn't save you multiple hours in the first 30 days, notify us and we'll refund your fee. No questions asked."
+  },
+  {
+    question: "Does this work for all types of restoration work?",
+    answer: "Yes. BIGlogic supports all standard restoration services, including water extraction, fire mitigation, storm damage reconstruction, roofing, and general remodeling projects."
+  }
+];
 
-    const toggleItem = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
+export const Faq = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-    const faqData = [
-        {
-            question: "What makes BigLogic different from standard Xactimate macros?",
-            answer: "BigLogic uses intelligent context-aware agents, not rigid macros. It understands the nuances of the estimate, local building codes, and carrier guidelines to generate project-specific schedules and extractions that macros simply can't match."
-        },
-        {
-            question: "Is my data secure?",
-            answer: "Absolutely. We are SOC 2 Type II ready with end-to-end encryption. Your estimate data is processed in isolated workspaces and never used to train our public models without explicit consent."
-        },
-        {
-            question: "How long does it take to process an estimate?",
-            answer: "Most estimates are processed in under 30 seconds. Large commercial losses with thousands of line items may take up to 2 minutes—still 95% faster than manual review."
-        },
-        {
-            question: "Can I customize the draw schedule output?",
-            answer: "Yes. You can define custom milestone percentages, retention rates, and grouping logic to match your specific lender requirements or internal cash flow models."
-        },
-        {
-            question: "Do you support ESX files?",
-            answer: "Yes, we support direct ESX upload as well as PDF integration. ESX files provide the highest accuracy for data extraction."
-        },
-        {
-            question: "What carriers are supported?",
-            answer: "Our engine is trained on guidelines from the top 10 major US carriers. We constantly update our rulesets to ensure your outputs remain compliant."
-        }
-    ];
+  const toggleItem = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-    return (
-        <section id="faq" className="py-24 bg-background text-foreground relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 z-0">
-                <div className={`absolute top-[-10%] left-[-10%] w-[500px] h-[500px] ${theme === "dark" ? "bg-indigo-900/5" : "bg-indigo-500/5"} blur-[100px] rounded-full`} />
-                <div className={`absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] ${theme === "dark" ? "bg-purple-900/5" : "bg-purple-500/5"} blur-[100px] rounded-full`} />
-            </div>
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
-                    {/* Left Column - FAQ Content */}
-                    <div className="space-y-8">
-                        {/* Header */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${theme === "dark" ? "bg-indigo-500/10 border-indigo-500/20 text-indigo-400" : "bg-indigo-100 border-indigo-200 text-indigo-600"} text-sm font-medium mb-6`}>
-                                <HelpCircle className="w-4 h-4" />
-                                <span>Support Center</span>
-                            </div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                                Frequently Asked <br />
-                                <span className={`text-transparent bg-clip-text bg-gradient-to-r ${theme === "dark" ? "from-indigo-400 to-purple-400" : "from-indigo-600 to-purple-600"}`}>Questions</span>
-                            </h2>
-                            <p className={`text-lg leading-relaxed max-w-lg ${theme === "dark" ? "text-muted-foreground" : "text-gray-600"}`}>
-                                Everything you need to know about automating your pre-construction workflow.
-                            </p>
-                        </motion.div>
-
-                        {/* FAQ Items */}
-                        <div className="space-y-4">
-                            {faqData.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="group"
-                                >
-                                    <div
-                                        onClick={() => toggleItem(index)}
-                                        className={`bg-card/50 border ${openIndex === index ? 'border-indigo-500/50 bg-card' : 'border-border'} rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:border-indigo-500/30`}
-                                    >
-                                        <div className="p-6 flex justify-between items-center gap-4">
-                                            <div className="flex items-center gap-4">
-                                                <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${openIndex === index ? 'bg-indigo-600 text-white' : 'bg-muted text-muted-foreground'}`}>
-                                                    <span className="text-sm font-bold">{index + 1}</span>
-                                                </div>
-                                                <h3 className={`font-semibold text-lg transition-colors duration-300 ${openIndex === index ? 'text-foreground' : theme === 'dark' ? 'text-muted-foreground group-hover:text-indigo-300' : 'text-gray-600 group-hover:text-indigo-600'}`}>
-                                                    {item.question}
-                                                </h3>
-                                            </div>
-                                            <div className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-indigo-400' : 'text-muted-foreground'}`}>
-                                                <ChevronDown className="w-5 h-5" />
-                                            </div>
-                                        </div>
-
-                                        <AnimatePresence>
-                                            {openIndex === index && (
-                                                <motion.div
-                                                    initial={{ height: 0, opacity: 0 }}
-                                                    animate={{ height: "auto", opacity: 1 }}
-                                                    exit={{ height: 0, opacity: 0 }}
-                                                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                                                >
-                                                    <div className="px-6 pb-6 pl-[4.5rem] pr-8">
-                                                        <p className="text-muted-foreground leading-relaxed border-t border-border pt-4">
-                                                            {item.answer}
-                                                        </p>
-                                                    </div>
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Right Column - Visual/Stats */}
-                    <div className="lg:pl-8 lg:sticky lg:top-32">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className={`relative rounded-3xl overflow-hidden shadow-2xl border ${theme === "dark" ? "border-white/10 bg-gray-900/50" : "border-indigo-100 bg-indigo-50/30"} backdrop-blur-sm`}
-                        >
-                            {/* Abstract Visual Placeholder since video might distract */}
-                            <div className="aspect-[4/5] md:aspect-video lg:aspect-[4/5] relative overflow-hidden">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${theme === "dark" ? "from-indigo-900 via-black to-purple-900" : "from-indigo-100 via-white to-purple-100"}`} />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className={`w-64 h-64 ${theme === "dark" ? "bg-indigo-500/20" : "bg-indigo-300/30"} rounded-full blur-[80px] animate-pulse`} />
-                                </div>
-
-                                {/* Floating Cards Visual */}
-                                <div className="absolute inset-0 p-8 flex flex-col justify-center gap-6">
-                                     <motion.div
-                                        animate={{ y: [0, -10, 0] }}
-                                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                        className="p-4 rounded-xl bg-card/80 border border-border backdrop-blur-md self-end w-3/4 shadow-xl"
-                                    >
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400"><Shield className="w-4 h-4" /></div>
-                                            <div className="text-xs font-mono text-emerald-400">AUDIT_PASSED</div>
-                                        </div>
-                                        <div className="h-2 w-full bg-muted rounded-full mb-2" />
-                                        <div className="h-2 w-2/3 bg-muted rounded-full" />
-                                    </motion.div>
-
-                                     <motion.div
-                                        animate={{ y: [0, 10, 0] }}
-                                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                        className="p-4 rounded-xl bg-card/80 border border-border backdrop-blur-md self-start w-3/4 shadow-xl"
-                                    >
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400"><FileText className="w-4 h-4" /></div>
-                                            <div className="text-xs font-mono text-indigo-400">SCHEDULE_GENERATED</div>
-                                        </div>
-                                        <div className="h-2 w-full bg-muted rounded-full mb-2" />
-                                        <div className="h-2 w-1/2 bg-muted rounded-full" />
-                                    </motion.div>
-
-                                     <motion.div
-                                        animate={{ y: [0, -5, 0] }}
-                                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                                        className="p-4 rounded-xl bg-card/80 border border-border backdrop-blur-md self-center w-3/4 shadow-xl"
-                                    >
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="p-1.5 rounded-lg bg-purple-500/20 text-purple-400"><Zap className="w-4 h-4" /></div>
-                                            <div className="text-xs font-mono text-purple-400">Speed: 45ms</div>
-                                        </div>
-                                        <div className="h-2 w-full bg-muted rounded-full mb-2" />
-                                        <div className="h-2 w-3/4 bg-muted rounded-full" />
-                                    </motion.div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Stats */}
-                        <div className="grid grid-cols-3 gap-4 mt-6">
-                            <div className={`text-center p-4 ${theme === "dark" ? "bg-white/5 border-white/10" : "bg-white border-indigo-100"} rounded-xl border backdrop-blur-sm shadow-sm`}>
-                                <div className={`text-2xl font-bold ${theme === "dark" ? "text-indigo-400" : "text-indigo-600"}`}>20k+</div>
-                                <div className={`${theme === "dark" ? "text-gray-500" : "text-gray-500"} text-xs mt-1 font-medium`}>Estimates</div>
-                            </div>
-                            <div className={`text-center p-4 ${theme === "dark" ? "bg-white/5 border-white/10" : "bg-white border-indigo-100"} rounded-xl border backdrop-blur-sm shadow-sm`}>
-                                <div className={`text-2xl font-bold ${theme === "dark" ? "text-indigo-400" : "text-indigo-600"}`}>99.9%</div>
-                                <div className={`${theme === "dark" ? "text-gray-500" : "text-gray-500"} text-xs mt-1 font-medium`}>Uptime</div>
-                            </div>
-                            <div className={`text-center p-4 ${theme === "dark" ? "bg-white/5 border-white/10" : "bg-white border-indigo-100"} rounded-xl border backdrop-blur-sm shadow-sm`}>
-                                <div className={`text-2xl font-bold ${theme === "dark" ? "text-indigo-400" : "text-indigo-600"}`}>24/7</div>
-                                <div className={`${theme === "dark" ? "text-gray-500" : "text-gray-500"} text-xs mt-1 font-medium`}>Monitoring</div>
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <section id="faq" className="py-24 bg-surface-abyss relative overflow-hidden border-b border-slate-lead/20">
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        
+        <div className="text-center mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mercury-blue/10 border border-mercury-blue/20 text-mercury-blue text-caption uppercase tracking-wider font-bold">
+            <HelpCircle className="w-4 h-4" />
+            <span>Support Center</span>
+          </div>
+          <h2 className="text-heading lg:text-heading-lg font-display text-starlight leading-tight">
+            Got Questions? <br className="hidden md:block"/>
+            <span className="text-mercury-blue">We've Got Answers.</span>
+          </h2>
+          <p className="text-body text-silver max-w-lg mx-auto leading-relaxed">
+            If something is on your mind, it's probably here. If not, our team is one message away.
+          </p>
+        </div>
+ 
+        <div className="space-y-16 max-w-3xl mx-auto">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-[2px] ${
+                openIndex === index 
+                  ? "bg-surface-surface border-mercury-blue/45 border-l-4 border-l-mercury-blue shadow-[0_20px_45px_rgba(21,128,61,0.1)] dark:shadow-[0_20px_45px_rgba(21,128,61,0.25)]" 
+                  : "bg-surface-surface border-slate-lead/20 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:border-slate-lead/35 hover:shadow-[0_25px_45px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_45px_rgba(21,128,61,0.18)]"
+              }`}
+            >
+              <button
+                onClick={() => toggleItem(index)}
+                className="group w-full p-24 flex justify-between items-center text-left gap-16"
+              >
+                <span className="font-display text-subheading font-bold text-starlight leading-tight">
+                  {item.question}
+                </span>
+                <div className={`w-32 h-32 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                  openIndex === index 
+                    ? "bg-mercury-blue/20 text-mercury-blue scale-110" 
+                    : "bg-slate-lead/10 text-silver group-hover:bg-slate-lead/20 group-hover:text-starlight"
+                }`}>
+                  <ChevronDown className={`w-16 h-16 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`} />
                 </div>
+              </button>
+              
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                  >
+                    <div className="px-24 pb-24 pt-4 border-t border-slate-lead/10">
+                      <p className="text-body-sm text-silver leading-relaxed font-light">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default Faq;

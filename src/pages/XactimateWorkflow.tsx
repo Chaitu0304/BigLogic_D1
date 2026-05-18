@@ -941,20 +941,20 @@ const XactimateWorkflow = () => {
         </div>
 
         {/* Step Indicator */}
-        <div className="flex items-center justify-center gap-2 max-w-2xl mx-auto w-full">
+        <div className="flex items-center justify-center gap-6 max-w-2xl mx-auto w-full">
           {["upload", "select", "schedule", "download"].map((s, idx) => (
-            <div key={s} className="flex items-center flex-1">
+            <div key={s} className="flex items-center">
               <div
-                className={`flex items-center justify-center w-10 h-10 rounded-full font-medium transition-colors ${step === s
+                className={`flex items-center justify-center w-12 h-12 rounded-full font-medium transition-colors ${step === s
                   ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30"
                   : idx < currentStepIndex
                     ? "bg-emerald-500 text-white"
                     : theme === "light" ? "bg-slate-200 text-slate-500" : "bg-muted text-muted-foreground"
                   }`}
               >
-                {idx < currentStepIndex ? <CheckCircle size={18} /> : idx + 1}
+                {idx < currentStepIndex ? <CheckCircle size={20} /> : idx + 1}
               </div>
-              {idx < 3 && <div className={`flex-1 h-0.5 mx-2 ${idx < currentStepIndex ? "bg-emerald-500/50" : theme === "light" ? "bg-slate-200" : "bg-muted"}`} />}
+              <span className="ml-2 text-sm font-medium text-foreground">{s.charAt(0).toUpperCase() + s.slice(1)}</span>
             </div>
           ))}
         </div>

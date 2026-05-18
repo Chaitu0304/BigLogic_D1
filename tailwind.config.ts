@@ -14,6 +14,25 @@ export default {
     },
     extend: {
       colors: {
+        // Mercury Colors
+        mercury: {
+          blue: "var(--color-mercury-blue)",
+          ghost: "var(--color-ghost-blue)",
+        },
+        surface: {
+          abyss: "var(--color-deep-space)",
+          surface: "var(--color-midnight-slate)",
+          interactive: "var(--color-graphite)",
+        },
+        slate: {
+          lead: "var(--color-lead)",
+        },
+        starlight: "var(--color-starlight)",
+        silver: "var(--color-silver)",
+        pure: {
+          white: "var(--color-pure-white)",
+        },
+        // Shadcn UI Colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -67,15 +86,51 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
-      boxShadow: {
-        'sm': 'var(--shadow-sm)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
+      fontFamily: {
+        display: ["var(--font-arcadiadisplay)", "sans-serif"],
+        body: ["var(--font-arcadia)", "sans-serif"],
+      },
+      fontSize: {
+        caption: ["var(--text-caption)", { lineHeight: "var(--leading-caption)", letterSpacing: "var(--tracking-caption)" }],
+        "body-sm": ["var(--text-body-sm)", { lineHeight: "var(--leading-body-sm)", letterSpacing: "var(--tracking-body-sm)" }],
+        body: ["var(--text-body)", { lineHeight: "var(--leading-body)", letterSpacing: "var(--tracking-body)" }],
+        subheading: ["var(--text-subheading)", { lineHeight: "var(--leading-subheading)" }],
+        "heading-sm": ["var(--text-heading-sm)", { lineHeight: "var(--leading-heading-sm)" }],
+        heading: ["var(--text-heading)", { lineHeight: "var(--leading-heading)" }],
+        "heading-lg": ["var(--text-heading-lg)", { lineHeight: "var(--leading-heading-lg)" }],
+        display: ["var(--text-display)", { lineHeight: "var(--leading-display)", letterSpacing: "var(--tracking-display)" }],
+      },
+      spacing: {
+        unit: "var(--spacing-unit)",
+        '4': "var(--spacing-4)",
+        '8': "var(--spacing-8)",
+        '12': "var(--spacing-12)",
+        '16': "var(--spacing-16)",
+        '20': "var(--spacing-20)",
+        '24': "var(--spacing-24)",
+        '32': "var(--spacing-32)",
+        '40': "var(--spacing-40)",
+        '56': "var(--spacing-56)",
+        '72': "var(--spacing-72)",
+        '80': "var(--spacing-80)",
+        '112': "var(--spacing-112)",
+        '128': "var(--spacing-128)",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        inputs: "var(--radius-inputs)",
+        buttons: "var(--radius-buttons)",
+        containers: "var(--radius-containers)",
+        cards: "var(--radius-cards)",
+        '3xl': "var(--radius-3xl)",
+        '3xl-2': "var(--radius-3xl-2)",
+      },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
       },
       keyframes: {
         "accordion-down": {

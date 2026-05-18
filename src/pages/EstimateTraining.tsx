@@ -249,7 +249,7 @@ const EstimateTraining = () => {
     setIsLoading(true);
     setProgress(0);
 
-    let intervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
       setProgress((prev) => (prev >= 4.9 ? 5 : prev + 0.5));
     }, 500);
 

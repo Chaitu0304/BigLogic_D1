@@ -1,102 +1,115 @@
-import { Building2, HardHat, Calculator, Briefcase, ChevronRight } from "lucide-react";
+import { Building2, Briefcase, DollarSign, HardHat } from "lucide-react";
 import { motion } from "framer-motion";
-import { useTheme } from "../ThemeProvider";
-import { useNavigate } from "react-router-dom";
 
-
-const ProfessionalCard = ({ label, icon: Icon, description, delay }: { label: string, icon: any, description: string, delay: number }) => {
-  const { theme } = useTheme();
-  const navigate = useNavigate();
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ y: -5 }}
-      className="group relative p-8 rounded-3xl bg-card/50 border border-border hover:border-indigo-500/50 hover:bg-card transition-all duration-300 overflow-hidden"
-    >
-      {/* Hover Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
-
-      <div className="relative z-10 flex flex-col items-center text-center">
-        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${theme === "dark" ? "from-indigo-500/20 to-purple-500/20" : "from-indigo-100 to-purple-100"} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ring-1 ring-border group-hover:ring-indigo-500/50`}>
-          <Icon className={`w-8 h-8 ${theme === "dark" ? "text-white group-hover:text-indigo-400" : "text-indigo-600 group-hover:text-indigo-700"} transition-colors`} />
-        </div>
-
-        <h3 className="text-xl font-bold text-foreground mb-3">{label}</h3>
-        <p className={`text-sm leading-relaxed mb-6 ${theme === "dark" ? "text-muted-foreground" : "text-gray-600 font-medium"}`}>
-          {description}
-        </p>
-
-        <div onClick={() => navigate("/dashboard")} className={`cursor-pointer flex items-center ${theme === "dark" ? "text-indigo-400" : "text-indigo-600"} text-sm font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300`}>
-          Get Started <ChevronRight className="w-4 h-4 ml-1" />
-        </div>
-      </div>
-    </motion.div>
-  )
-};
+const roles = [
+  {
+    icon: Building2,
+    title: "Company Owner / Admin",
+    desc: (
+      <>
+        Oversee all operations, P&Ls, and team efficiency in one place. Define <strong className="text-starlight font-semibold">granular permissions</strong> and workflows.
+      </>
+    )
+  },
+  {
+    icon: Briefcase,
+    title: "Project Manager",
+    desc: (
+      <>
+        Run active jobs in parallel, complete trade tracking, and automate <strong className="text-starlight font-semibold">carrier communication</strong>.
+      </>
+    )
+  },
+  {
+    icon: DollarSign,
+    title: "Finance & Office Staff",
+    desc: (
+      <>
+        Automate invoice drafts, organize billing records, and log instant <strong className="text-starlight font-semibold">QuickBooks sync</strong> events.
+      </>
+    )
+  },
+  {
+    icon: HardHat,
+    title: "Field Staff / Site Manager",
+    desc: (
+      <>
+        Direct onsite notes capture, upload job photos, and post <strong className="text-starlight font-semibold">real-time field updates</strong> live on location.
+      </>
+    )
+  }
+];
 
 export const WhoItsFor = () => {
-  const { theme } = useTheme();
-  const professionals = [
-    {
-      icon: HardHat,
-      label: "Restoration Contractors",
-      description: "Automate Xactimate workflows to focus on rebuilding, not paperwork."
-    },
-    {
-      icon: Building2,
-      label: "Construction Firms",
-      description: "Scale your estimating capacity without adding administrative overhead."
-    },
-    {
-      icon: Calculator,
-      label: "Insurance Estimators",
-      description: "Ensure carrier-grade accuracy and compliance in every line item."
-    },
-    {
-      icon: Briefcase,
-      label: "Operations Teams",
-      description: "Streamline project management with audit-ready data at your fingertips."
-    }
-  ];
-
   return (
-    <section id="who-its-for" className="py-32 bg-background relative overflow-hidden">
-      {/* Ambient Glow */}
-      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] ${theme === "dark" ? "bg-indigo-900/20" : "bg-indigo-500/10"} blur-[120px] rounded-full`} />
-
+    <section className="py-24 bg-surface-abyss relative border-b border-slate-lead/20">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          
+          {/* Left Column - Copy & Grid */}
+          <div className="lg:col-span-7 space-y-12">
+            <div>
+              <h2 className="text-heading lg:text-heading-lg font-display text-starlight mb-6 leading-tight">
+                Built for Every Person <br className="hidden md:block"/>
+                <span className="text-mercury-blue">on Your Restoration Team.</span>
+              </h2>
+              <p className="text-body text-silver leading-relaxed max-w-xl">
+                BIGlogic isolates exact operational views per role — so your office administrators, finance teams, project managers, and field crews see precisely what they need to succeed.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {roles.map((role, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="p-6 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-col justify-between transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
+                >
+                  <div className="flex gap-20 items-start">
+                    <div className="w-56 h-56 rounded-xl bg-mercury-blue/10 flex items-center justify-center text-mercury-blue shrink-0 mt-4">
+                      <role.icon className="w-24 h-24" />
+                    </div>
+                    <div className="space-y-8">
+                      <h3 className="text-body font-semibold text-starlight leading-tight">
+                        {role.title}
+                      </h3>
+                      <p className="text-caption text-silver leading-relaxed font-light">
+                        {role.desc}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Premium Graphic Image */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-foreground mb-6"
+            className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-slate-lead/30 shadow-2xl aspect-[4/5] bg-surface-interactive"
           >
-            Built For <span className={`text-transparent bg-clip-text bg-gradient-to-r ${theme === "dark" ? "from-indigo-400 to-purple-400" : "from-indigo-800 to-purple-800"}`}>Industry Leaders</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-foreground max-w-2xl mx-auto"
-          >
-            Empowering every stakeholder in the restoration ecosystem with diverse intelligence.
-          </motion.p>
+            <img 
+              src="/images/mercury_team_collaboration.png" 
+              alt="Diverse property restoration crew collaborating in front of BIGlogic AI connected dashboard interface" 
+              className="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-abyss/85 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-black/75 border border-white/10 backdrop-blur-md shadow-lg">
+              <blockquote className="text-body-sm font-display text-white font-medium italic leading-relaxed">
+                "No matter your role — if you touch a restoration project, BIGlogic has a workspace designed for you."
+              </blockquote>
+            </div>
+          </motion.div>
+
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {professionals.map((prof, idx) => (
-            <ProfessionalCard
-              key={idx}
-              {...prof}
-              delay={idx * 0.1}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

@@ -188,9 +188,9 @@ const DocumentsTab = () => {
     const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
     const paginatedDocuments = filteredDocuments.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
-    let totalDocs = documents.length;
-    let requiredDocs = documents.filter((doc: any) => doc.isRequired).length;
-    let contractDocs = documents.filter((doc: any) => doc.category === 'Contract').length;
+    const totalDocs = documents.length;
+    const requiredDocs = documents.filter((doc: any) => doc.isRequired).length;
+    const contractDocs = documents.filter((doc: any) => doc.category === 'Contract').length;
 
     return (
         <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
