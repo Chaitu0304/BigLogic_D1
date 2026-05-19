@@ -38,16 +38,14 @@ export const WhatYouGet = () => {
 
             <div className="space-y-12">
               <div className="flex justify-between items-center p-12 rounded-xl bg-destructive/5 dark:bg-destructive/10 border border-destructive/10">
-                <span className="text-body-sm text-silver flex items-center gap-8">
-                  <AlertCircle className="w-14 h-14 text-destructive" />
+                <span className="text-body-sm text-silver">
                   Traditional Operations Cost
                 </span>
                 <span className="text-body-sm font-bold text-destructive">~$5,900/mo</span>
               </div>
 
               <div className="flex justify-between items-center p-12 rounded-xl bg-mercury-blue/5 dark:bg-mercury-blue/10 border border-mercury-blue/10">
-                <span className="text-body-sm text-silver flex items-center gap-8">
-                  <CheckCircle className="w-14 h-14 text-mercury-blue" />
+                <span className="text-body-sm text-silver">
                   BIGlogic AI Operations Cost
                 </span>
                 <span className="text-body-sm font-bold text-mercury-blue">Flat Subscription</span>

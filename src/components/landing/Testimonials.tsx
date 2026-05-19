@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -68,8 +68,6 @@ export const Testimonials = () => {
             >
               {/* Left Accent Gradient Strip */}
               <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-mercury-blue via-emerald-500/70 to-transparent rounded-l-3xl" />
-              
-              <Quote className="absolute top-6 right-6 w-16 h-16 text-mercury-blue/5 pointer-events-none group-hover:scale-110 group-hover:text-mercury-blue/10 transition-all duration-500" />
               
               <div className="space-y-20 relative z-10 pl-8">
                 <p className="text-body-sm text-silver leading-relaxed italic font-light">

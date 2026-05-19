@@ -47,10 +47,10 @@ export const Integrations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-8 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-row items-start gap-24 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
+              className="p-24 md:p-32 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-row items-start gap-24 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
             >
-              <div className="w-80 h-80 rounded-2xl bg-mercury-blue/10 border border-none flex items-center justify-center text-mercury-blue shrink-0 shadow-[0_4px_20px_rgba(21,128,61,0.05)]">
-                <item.icon className="w-40 h-40" />
+              <div className="w-56 h-56 rounded-2xl bg-mercury-blue/10 border border-none flex items-center justify-center text-mercury-blue shrink-0 shadow-[0_4px_20px_rgba(21,128,61,0.05)]">
+                <item.icon className="w-28 h-28" />
               </div>
               <div className="space-y-12">
                 <h3 className="text-subheading font-display text-starlight font-bold leading-tight">

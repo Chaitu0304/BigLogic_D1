@@ -65,17 +65,17 @@ export const AITools = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group flex flex-row items-start gap-20 bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 p-24 rounded-3xl transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
+                className="group flex flex-row items-start gap-24 bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 p-24 md:p-32 rounded-3xl transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
               >
-                <div className="w-56 h-56 rounded-2xl bg-mercury-blue/10 dark:bg-mercury-blue/15 border border-none flex items-center justify-center text-mercury-blue shrink-0 group-hover:scale-110 hover:shadow-[0_0_12px_rgba(21,128,61,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-mercury-blue transition-transform duration-300">
-                  <Icon className="w-32 h-32" />
+                <div className="w-56 h-56 rounded-2xl bg-mercury-blue/10 dark:bg-mercury-blue/15 border border-none flex items-center justify-center text-mercury-blue shrink-0 group-hover:scale-110 hover:shadow-[0_0_12px_rgba(21,128,61,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-mercury-blue transition-transform duration-300 shadow-[0_4px_20px_rgba(21,128,61,0.05)]">
+                  <Icon className="w-28 h-28" />
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-subheading font-medium text-starlight leading-tight">
+                  <h3 className="text-subheading font-display text-starlight font-bold leading-tight">
                     {tool.title}
                   </h3>
-                  <p className="text-body-sm text-silver leading-relaxed">
+                  <p className="text-body-sm text-silver leading-relaxed font-light">
                     {tool.desc}
                   </p>
                 </div>

@@ -71,45 +71,47 @@ export const Services = () => {
                 onMouseEnter={() => setActiveModule(mod.id)}
                 onClick={() => setActiveModule(mod.id)}
                 className={cn(
-                  "text-left p-6 rounded-2xl transition-all duration-300 border",
+                  "text-left p-24 md:p-32 rounded-3xl transition-all duration-500 ease-out border flex flex-row items-start gap-20",
                   activeModule === mod.id 
-                    ? "bg-surface-interactive border-mercury-blue/40 shadow-md" 
-                    : "bg-transparent border-transparent hover:bg-surface-interactive/40 hover:border-slate-lead/30"
+                    ? "bg-surface-surface border-mercury-blue/40 shadow-[0_25px_50px_rgba(21,128,61,0.08)] dark:shadow-[0_25px_50px_rgba(21,128,61,0.22)] -translate-y-1" 
+                    : "bg-surface-surface/40 border-slate-lead/10 hover:border-slate-lead/25 shadow-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.02)] dark:hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:bg-surface-surface/80 hover:-translate-y-0.5"
                 )}
               >
-                <div className="flex items-center space-x-4 mb-3">
-                  <div className={cn(
-                    "p-3 rounded-xl transition-colors",
-                    activeModule === mod.id ? "bg-mercury-blue text-pure-white" : "bg-surface-interactive text-silver"
-                  )}>
-                    <mod.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-subheading font-medium text-starlight">
+                <div className={cn(
+                  "w-56 h-56 rounded-2xl border border-none flex items-center justify-center shrink-0 transition-all duration-300 shadow-[0_4px_20px_rgba(21,128,61,0.05)]",
+                  activeModule === mod.id ? "bg-mercury-blue text-pure-white shadow-[0_4px_20px_rgba(21,128,61,0.2)]" : "bg-mercury-blue/10 text-mercury-blue"
+                )}>
+                  <mod.icon className="w-28 h-28" />
+                </div>
+
+                <div className="space-y-8 flex-grow w-full">
+                  <h3 className="text-subheading font-display text-starlight font-bold leading-tight">
                     {mod.title}
                   </h3>
+                  
+                  <AnimatePresence mode="wait"> 
+                    {activeModule === mod.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden space-y-12 w-full"
+                      >
+                        <p className="text-body-sm text-silver leading-relaxed font-light mt-4">
+                          {mod.description}
+                        </p>
+                        <ul className="grid grid-cols-1 gap-2 pt-4">
+                          {mod.features.map((feat, i) => (
+                            <li key={i} className="text-caption text-silver flex items-center font-light">
+                              <span className="w-1.5 h-1.5 rounded-full bg-mercury-blue mr-2 shrink-0" />
+                              {feat}
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-                <AnimatePresence mode="wait">
-                  {activeModule === mod.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="text-body-sm text-silver mb-4 leading-relaxed">
-                        {mod.description}
-                      </p>
-                      <ul className="grid grid-cols-1 gap-2">
-                        {mod.features.map((feat, i) => (
-                          <li key={i} className="text-caption text-silver flex items-center">
-                            <span className="w-1.5 h-1.5 rounded-full bg-mercury-blue mr-2 shrink-0" />
-                            {feat}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </button>
             ))}
           </div>

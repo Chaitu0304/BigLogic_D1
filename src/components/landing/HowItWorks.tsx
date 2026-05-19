@@ -60,12 +60,12 @@ export const HowItWorks = () => {
                 </div>
                 
                 {/* Step Card Content */}
-                <div className="flex-grow bg-surface-surface border border-slate-lead/30 rounded-3xl p-6 hover:border-mercury-blue/50 transition-all duration-300 shadow-sm hover:shadow-md space-y-2">
-                  <h3 className="text-subheading font-medium text-starlight leading-tight">
+                <div className="flex-grow bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 rounded-3xl p-24 md:p-32 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5 space-y-2">
+                  <h3 className="text-subheading font-display text-starlight font-bold leading-tight">
                     <span className="text-mercury-blue mr-2 font-display font-bold">0{step.num}.</span>
                     {step.title}
                   </h3>
-                  <p className="text-body-sm text-silver leading-relaxed">
+                  <p className="text-body-sm text-silver leading-relaxed font-light">
                     {step.desc}
                   </p>
                 </div>

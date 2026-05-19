@@ -67,17 +67,17 @@ export const WhoItsFor = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="p-6 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-col justify-between transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
+                  className="p-24 md:p-32 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-col justify-between transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
                 >
-                  <div className="flex gap-20 items-start">
-                    <div className="w-56 h-56 rounded-xl bg-mercury-blue/10 flex items-center justify-center text-mercury-blue shrink-0 mt-4">
-                      <role.icon className="w-24 h-24" />
+                  <div className="flex flex-row items-start gap-20">
+                    <div className="w-56 h-56 rounded-2xl bg-mercury-blue/10 flex items-center justify-center text-mercury-blue shrink-0 shadow-[0_4px_20px_rgba(21,128,61,0.05)]">
+                      <role.icon className="w-28 h-28" />
                     </div>
-                    <div className="space-y-8">
-                      <h3 className="text-body font-semibold text-starlight leading-tight">
+                    <div className="space-y-8 flex-grow">
+                      <h3 className="text-subheading font-display text-starlight font-bold leading-tight">
                         {role.title}
                       </h3>
-                      <p className="text-caption text-silver leading-relaxed font-light">
+                      <p className="text-body-sm text-silver leading-relaxed font-light">
                         {role.desc}
                       </p>
                     </div>
