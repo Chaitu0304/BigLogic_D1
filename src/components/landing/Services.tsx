@@ -71,10 +71,10 @@ export const Services = () => {
                 onMouseEnter={() => setActiveModule(mod.id)}
                 onClick={() => setActiveModule(mod.id)}
                 className={cn(
-                  "text-left p-6 rounded-2xl transition-all duration-300 border",
+                  "text-left p-6 rounded-3xl transition-all duration-500 ease-out border flex flex-col justify-between",
                   activeModule === mod.id 
-                    ? "bg-surface-interactive border-mercury-blue/40 shadow-md" 
-                    : "bg-transparent border-transparent hover:bg-surface-interactive/40 hover:border-slate-lead/30"
+                    ? "bg-surface-surface border-mercury-blue/35 shadow-[0_15px_40px_rgba(21,128,61,0.06)] dark:shadow-[0_15px_40px_rgba(21,128,61,0.18)] -translate-y-0.5" 
+                    : "bg-transparent border-transparent hover:bg-surface-surface/40 hover:border-slate-lead/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:-translate-y-0.5"
                 )}
               >
                 <div className="flex items-center space-x-4 mb-3">
