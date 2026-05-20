@@ -26,7 +26,7 @@ const integrations = [
 
 export const Integrations = () => {
   return (
-    <section className="bg-surface-abyss py-24 relative overflow-hidden border-b border-slate-lead/20">
+    <section className="bg-surface-abyss py-50 relative overflow-hidden border-b border-slate-lead/20">
       <div className="container max-w-6xl mx-auto px-4 relative z-10">
         
         <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
@@ -39,7 +39,7 @@ export const Integrations = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {integrations.map((item, idx) => (
             <motion.div
               key={idx}
@@ -47,7 +47,7 @@ export const Integrations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-24 md:p-32 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-row items-start gap-24 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
+              className="p-24 md:p-32 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-row items-start gap-24 transition-all duration-500 ease-out shadow-[0_22px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:-translate-y-0.5"
             >
               <div className="w-56 h-56 rounded-2xl bg-mercury-blue/10 border border-none flex items-center justify-center text-mercury-blue shrink-0 shadow-[0_4px_20px_rgba(21,128,61,0.05)]">
                 <item.icon className="w-28 h-28" />

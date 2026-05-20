@@ -46,7 +46,7 @@ export const TrustSecurity = () => {
   ];
 
   return (
-    <section id="security" className="py-24 bg-surface-abyss relative overflow-hidden border-t border-slate-lead/20">
+    <section id="security" className="py-50 bg-surface-abyss relative overflow-hidden border-t border-slate-lead/20">
       {/* Ambient Background */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-900/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
 
@@ -86,7 +86,7 @@ export const TrustSecurity = () => {
             className="relative"
           >
             <div className="absolute inset-0 bg-emerald-500/10 blur-[60px] rounded-full" />
-            <div className="relative rounded-3xl overflow-hidden border border-slate-lead/30 bg-surface-surface/65 backdrop-blur-xl shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-lead/30 bg-surface-surface/65 backdrop-blur-xl shadow-[0_0_32px_rgba(0,0,0,0.16)] hover:shadow-[0_0_48px_rgba(0,0,0,0.24)] transition-all duration-500">
               {/* Mock UI for Security Dashboard */}
               <div className="p-6 border-b border-slate-lead/20 flex items-center justify-between bg-surface-interactive/30">
                 <div className="flex items-center gap-2">

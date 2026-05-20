@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const Solution = () => {
   return (
-    <section className="bg-surface-abyss py-24 relative overflow-hidden">
+    <section className="bg-surface-abyss py-50 relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -12,7 +12,7 @@ export const Solution = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-6 rounded-3xl overflow-hidden border border-slate-lead/30 shadow-xl bg-surface-surface hover:shadow-2xl transition-all duration-500"
+            className="lg:col-span-6 rounded-3xl overflow-hidden border border-slate-lead/30 shadow-[0_0_32px_rgba(0,0,0,0.16)] bg-surface-surface hover:shadow-[0_0_48px_rgba(0,0,0,0.24)] transition-all duration-500"
           >
             <img
               src="/images/solution_dashboard_mockup.png"
@@ -41,7 +41,7 @@ export const Solution = () => {
             </div>
 
             {/* Embedded Elegant Quote Card */}
-            <div className="relative bg-surface-surface border border-slate-lead/20 rounded-3xl p-24 md:p-32 overflow-hidden transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5 hover:border-mercury-blue/30">
+            <div className="relative bg-surface-surface border border-slate-lead/20 rounded-3xl p-24 md:p-32 overflow-hidden transition-all duration-500 ease-out shadow-[0_24px_70px_rgba(0,0,0,0.16)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_32px_100px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:-translate-y-0.5 hover:border-mercury-blue/30">
               <blockquote className="relative z-10 text-body font-display text-starlight font-light text-center leading-relaxed italic">
                 "Imagine having an estimator, a compliance checker, a billing coordinator, and a project manager working 24/7 with zero errors — for less than a part-time salary. That is BIGlogic."
               </blockquote>

@@ -70,9 +70,10 @@ const getPlanIcon = (idx: number) => {
 
 export const Pricing = () => {
   const [billingPeriod, setBillingPeriod] = useState<"annually" | "monthly">("annually");
+  const [hoveredPlan, setHoveredPlan] = useState<number>(1);
 
   return (
-    <section id="pricing" className="bg-surface-abyss py-24 relative overflow-hidden border-b border-slate-lead/20">
+    <section id="pricing" className="bg-surface-abyss py-50 relative overflow-hidden border-b border-slate-lead/20">
       {/* Dynamic ambient backgrounds */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-mercury-blue/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-mercury-blue/5 rounded-full blur-[120px] pointer-events-none" />
@@ -143,18 +144,20 @@ export const Pricing = () => {
           {plans.map((plan, idx) => {
             const price = billingPeriod === "monthly" ? plan.priceMonthly : plan.priceAnnually;
             const savings = plan.priceMonthly - plan.priceAnnually;
+            const isHovered = hoveredPlan === idx;
             return (
               <motion.div
                 key={idx}
+                onMouseEnter={() => setHoveredPlan(idx)}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className={cn(
-                  "p-24 md:p-32 rounded-3xl flex flex-col justify-between relative border transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1.5",
-                  plan.popular 
-                    ? "bg-surface-surface border-mercury-blue ring-2 ring-mercury-blue/40 lg:scale-[1.03] shadow-[0_25px_50px_rgba(21,128,61,0.22)] dark:shadow-[0_25px_50px_rgba(21,128,61,0.3)] hover:shadow-[0_30px_60px_rgba(21,128,61,0.32)] dark:hover:shadow-[0_30px_60px_rgba(21,128,61,0.42)]" 
-                    : "bg-surface-surface border-slate-lead/20 hover:border-mercury-blue/30 hover:shadow-[0_25px_50px_rgba(21,128,61,0.08)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.2)]"
+                  "p-24 md:p-32 rounded-3xl flex flex-col justify-between relative border transition-all duration-500 ease-out shadow-[0_24px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)]",
+                  isHovered 
+                    ? "bg-surface-surface border-mercury-blue ring-2 ring-mercury-blue/40 lg:scale-[1.03] shadow-[0_24px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_32px_90px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)]" 
+                    : "bg-surface-surface border-slate-lead/20 hover:border-mercury-blue/30 hover:shadow-[0_32px_90px_rgba(0,0,0,0.24),0_0_40px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(82,102,235,0.5)] lg:scale-100"
                 )}
               >
                 {plan.popular && (
@@ -210,8 +213,8 @@ export const Pricing = () => {
 
                 <div className="pt-24">
                   <button className={cn(
-                    "group w-full h-40 rounded-xl text-[10px] font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-8 border",
-                    plan.popular 
+                    "group w-full min-h-[56px] px-4 rounded-xl text-xs font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-4 sm:gap-8 border",
+                    isHovered 
                       ? "bg-mercury-blue hover:bg-emerald-600 border-emerald-500/20 hover:border-emerald-500/40 text-pure-white shadow-[0_2px_12px_rgba(21,128,61,0.15)] hover:shadow-[0_4px_20px_rgba(21,128,61,0.3)]" 
                       : "bg-transparent border-slate-lead/30 hover:border-mercury-blue/60 text-silver hover:text-starlight hover:bg-mercury-blue/5"
                   )}>

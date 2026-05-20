@@ -110,6 +110,7 @@ export default {
         '24': "var(--spacing-24)",
         '32': "var(--spacing-32)",
         '40': "var(--spacing-40)",
+        '50': "6rem",
         '56': "var(--spacing-56)",
         '72': "var(--spacing-72)",
         '80': "var(--spacing-80)",

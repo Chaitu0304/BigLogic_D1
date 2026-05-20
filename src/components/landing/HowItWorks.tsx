@@ -24,7 +24,7 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="bg-surface-abyss py-24 border-t border-slate-lead/20 relative">
+    <section id="how-it-works" className="bg-surface-abyss py-50 border-t border-slate-lead/20 relative">
       <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -41,7 +41,7 @@ export const HowItWorks = () => {
           </div>
 
           {/* Right Column: 3 Steps Styled as a Flowchart Timeline */}
-          <div className="lg:col-span-7 relative py-2 flex flex-col gap-8">
+          <div className="lg:col-span-7 relative py-2 flex flex-col gap-9">
             {/* Elegant Flowchart Connector Line */}
             <div className="absolute left-[28px] sm:left-[36px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-mercury-blue via-mercury-blue/30 to-transparent z-0" />
 
@@ -60,7 +60,7 @@ export const HowItWorks = () => {
                 </div>
                 
                 {/* Step Card Content */}
-                <div className="flex-grow bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 rounded-3xl p-24 md:p-32 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5 space-y-2">
+                <div className="flex-grow bg-surface-surface border border-slate-lead/30 hover:border-mercury-blue/30 rounded-3xl p-24 md:p-32 transition-all duration-500 ease-out shadow-[0_0_32px_rgba(0,0,0,0.16)] bg-surface-surface hover:shadow-[0_0_48px_rgba(0,0,0,0.24)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:-translate-y-0.5 space-y-2">
                   <h3 className="text-subheading font-display text-starlight font-bold leading-tight">
                     <span className="text-mercury-blue mr-2 font-display font-bold">0{step.num}.</span>
                     {step.title}

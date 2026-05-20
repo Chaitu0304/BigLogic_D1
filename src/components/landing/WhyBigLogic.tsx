@@ -44,7 +44,7 @@ export const WhyBigLogic = () => {
   ];
 
   return (
-    <section id="why-us" className="py-32 bg-background relative overflow-hidden">
+    <section id="why-us" className="py-50 bg-background relative overflow-hidden">
       {/* Background Ambience */}
       <div className={`absolute top-0 right-0 w-[600px] h-[600px] ${theme === "dark" ? "bg-indigo-900/10" : "bg-indigo-500/5"} blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3`} />
       
@@ -88,7 +88,7 @@ export const WhyBigLogic = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ x: 10 }}
-                className={`p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-sm shadow-xl shadow-black/5 hover:border-indigo-500/30 hover:bg-card transition-all duration-300 flex items-start gap-6 group`}
+                className={`p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-sm shadow-[0_0_28px_rgba(0,0,0,0.16)] hover:border-indigo-500/40 hover:bg-card transition-all duration-300 flex items-start gap-6 group hover:-translate-y-0.5`}
               >
                 <div className={`w-14 h-14 rounded-xl ${reason.bg} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 ring-1 ring-border mt-1`}>
                   <reason.icon className={`w-7 h-7 ${reason.color}`} />

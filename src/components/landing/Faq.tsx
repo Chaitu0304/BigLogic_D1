@@ -45,7 +45,7 @@ export const Faq = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-surface-abyss relative overflow-hidden border-b border-slate-lead/20">
+    <section id="faq" className="py-50 bg-surface-abyss relative overflow-hidden border-b border-slate-lead/20">
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
         
         <div className="text-center mb-16 space-y-4">
@@ -69,7 +69,7 @@ export const Faq = () => {
               className={`border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-[2px] ${
                 openIndex === index 
                   ? "bg-surface-surface border-mercury-blue/45 border-l-4 border-l-mercury-blue shadow-[0_20px_45px_rgba(21,128,61,0.1)] dark:shadow-[0_20px_45px_rgba(21,128,61,0.25)]" 
-                  : "bg-surface-surface border-slate-lead/20 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:border-slate-lead/35 hover:shadow-[0_25px_45px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_45px_rgba(21,128,61,0.18)]"
+                  : "bg-surface-surface border-slate-lead/20 shadow-[0_22px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:border-slate-lead/35 hover:shadow-[0_32px_90px_rgba(0,0,0,0.24),0_0_40px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(82,102,235,0.5)]"
               }`}
             >
               <button

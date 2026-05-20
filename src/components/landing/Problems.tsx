@@ -35,7 +35,7 @@ const problems = [
 
 export const Problems = () => {
   return (
-    <section className="bg-surface-abyss py-24 border-b border-slate-lead/20 relative">
+    <section className="bg-surface-abyss py-50 border-b border-slate-lead/20 relative">
       <div className="container max-w-7xl mx-auto px-4 relative z-10">
         
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -82,7 +82,7 @@ export const Problems = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden border border-slate-lead/30 shadow-2xl aspect-[4/3] bg-surface-interactive"
+            className="relative rounded-3xl overflow-hidden border border-slate-lead/30 shadow-[0_0_32px_rgba(0,0,0,0.16)] aspect-[4/3] bg-surface-interactive hover:shadow-[0_0_48px_rgba(0,0,0,0.24)] hover:-translate-y-0.5 transition-all duration-500"
           >
             <img 
               src="/images/mercury_problems_desk.png" 

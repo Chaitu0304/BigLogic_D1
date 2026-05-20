@@ -10,7 +10,7 @@ export const SocialProof = () => {
   ];
 
   return (
-    <section className="bg-surface-abyss border-y border-slate-lead/20 py-32">
+    <section className="bg-surface-abyss border-y border-slate-lead/20 py-50">
       <div className="container max-w-7xl mx-auto px-4">
         {/* Sleek Enterprise Header with horizontal fading lines */}
         <div className="flex items-center justify-center gap-24 mb-32">
@@ -30,7 +30,7 @@ export const SocialProof = () => {
                 key={index}
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="group flex items-center justify-center gap-12 bg-surface-surface/20 hover:bg-surface-surface/45 backdrop-blur-sm border border-slate-lead/10 hover:border-mercury-blue/30 rounded-2xl p-16 shadow-[0_2px_12px_rgba(0,0,0,0.01)] dark:shadow-[0_2px_12px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_24px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_6px_24px_rgba(21,128,61,0.18)] transition-all duration-300 cursor-default"
+                className="group flex items-center justify-center gap-12 bg-surface-surface/20 hover:bg-surface-surface/45 backdrop-blur-sm border border-slate-lead/10 hover:border-mercury-blue/30 rounded-2xl p-16 shadow-[0_22px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] transition-all duration-300 cursor-default"
               >
                 <div className="w-32 h-32 rounded-xl bg-mercury-blue/10 dark:bg-mercury-blue/15 border border-mercury-blue/20 flex items-center justify-center text-mercury-blue group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-16 h-16" />

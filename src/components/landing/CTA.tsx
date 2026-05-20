@@ -4,7 +4,7 @@ export const CTA = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative py-32 overflow-hidden bg-surface-abyss border-t border-slate-lead/20">
+    <section className="relative py-50 overflow-hidden bg-surface-abyss border-t border-slate-lead/20">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-20"

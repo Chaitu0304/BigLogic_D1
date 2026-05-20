@@ -42,7 +42,7 @@ const roles = [
 
 export const WhoItsFor = () => {
   return (
-    <section className="py-24 bg-surface-abyss relative border-b border-slate-lead/20">
+    <section className="py-50 bg-surface-abyss relative border-b border-slate-lead/20">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -67,13 +67,13 @@ export const WhoItsFor = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="p-24 md:p-32 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-col justify-between transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5"
+                  className="p-24 md:p-32 rounded-3xl bg-surface-surface border border-slate-lead/20 hover:border-mercury-blue/30 flex flex-col justify-between transition-all duration-500 ease-out shadow-[0_0_30px_rgba(0,0,0,0.16)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_0_48px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:-translate-y-0.5"
                 >
-                  <div className="flex flex-row items-start gap-20">
+                  <div className="flex flex-row items-start gap-20 ">
                     <div className="w-56 h-56 rounded-2xl bg-mercury-blue/10 flex items-center justify-center text-mercury-blue shrink-0 shadow-[0_4px_20px_rgba(21,128,61,0.05)]">
                       <role.icon className="w-28 h-28" />
                     </div>
-                    <div className="space-y-8 flex-grow">
+                    <div className="space-y-8 flex-grow h-45">
                       <h3 className="text-subheading font-display text-starlight font-bold leading-tight">
                         {role.title}
                       </h3>
@@ -92,7 +92,7 @@ export const WhoItsFor = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-slate-lead/30 shadow-2xl aspect-[4/5] bg-surface-interactive"
+            className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-slate-lead/30 shadow-[0_24px_90px_rgba(0,0,0,0.18)] aspect-[4/5] bg-surface-interactive hover:shadow-[0_32px_110px_rgba(0,0,0,0.24)] transition-all duration-500"
           >
             <img 
               src="/images/mercury_team_collaboration.png" 

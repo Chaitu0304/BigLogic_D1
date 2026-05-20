@@ -56,7 +56,7 @@ export const Navbar = () => {
         className={`w-full pointer-events-auto transition-all duration-500 ease-in-out border flex flex-col justify-center ${
           isScrolled 
             ? "max-w-[1240px] rounded-full bg-surface-surface/75 backdrop-blur-xl border-none shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] px-8 h-35"
-            : "max-w-[1380px] rounded-3xl bg-surface-surface/30 backdrop-blur-md border-none px-10 h-50"
+            : "max-w-[1380px] rounded-full bg-surface-surface/30 backdrop-blur-md border-none px-10 h-40"
         }`}
       >
         <div className="flex items-center justify-between w-full">

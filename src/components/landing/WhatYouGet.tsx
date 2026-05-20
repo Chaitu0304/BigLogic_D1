@@ -3,7 +3,7 @@ import { AlertCircle, CheckCircle, Clock, TrendingDown, Landmark } from "lucide-
 
 export const WhatYouGet = () => {
   return (
-    <section className="bg-surface-abyss py-24 relative overflow-hidden border-b border-slate-lead/20">
+    <section className="bg-surface-abyss py-50 relative overflow-hidden border-b border-slate-lead/20">
       {/* Subtle light leak */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-mercury-blue/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -15,7 +15,7 @@ export const WhatYouGet = () => {
             <TrendingDown className="w-16 h-16 text-mercury-blue" />
             <span className="text-caption font-bold text-mercury-blue tracking-wide uppercase">Efficiency Audit</span>
           </div>
-          <h2 className="text-heading font-display text-starlight leading-tight">
+          <h2 className="text-heading lg:text-heading-lg font-display text-starlight leading-tight">
             Stop Bleeding Overhead <br className="hidden sm:block"/>
             <span className="text-mercury-blue">on Manual Tasks a Machine Can Do.</span>
           </h2>
@@ -25,7 +25,7 @@ export const WhatYouGet = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-stretch">
           
           {/* Left Column: Financial Audit */}
-          <div className="bg-surface-surface border border-slate-lead/20 rounded-3xl p-24 md:p-32 flex flex-col justify-between space-y-24 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5 hover:border-mercury-blue/30">
+          <div className="bg-surface-surface border border-slate-lead/20 rounded-3xl p-24 md:p-32 flex flex-col justify-between space-y-24 transition-all duration-500 ease-out shadow-[0_22px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:-translate-y-0.5 hover:border-mercury-blue/30">
             <div className="space-y-4">
               <div className="flex items-center gap-12 text-subheading font-display font-bold text-starlight">
                 <Landmark className="w-20 h-20 text-mercury-blue animate-pulse" />
@@ -63,7 +63,7 @@ export const WhatYouGet = () => {
           </div>
 
           {/* Right Column: Time Gained Back */}
-          <div className="bg-surface-surface border border-slate-lead/20 rounded-3xl p-24 md:p-32 flex flex-col justify-between space-y-24 transition-all duration-500 ease-out shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-1.5 hover:border-mercury-blue/30">
+          <div className="bg-surface-surface border border-slate-lead/20 rounded-3xl p-24 md:p-32 flex flex-col justify-between space-y-24 transition-all duration-500 ease-out shadow-[0_22px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:-translate-y-0.5 hover:border-mercury-blue/30">
             <div className="space-y-4">
               <div className="flex items-center gap-12 text-subheading font-display font-bold text-starlight">
                 <Clock className="w-20 h-20 text-mercury-blue" />

@@ -34,7 +34,7 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section id="testimonials" className="bg-surface-abyss py-24 relative overflow-hidden border-b border-slate-lead/20">
+    <section id="testimonials" className="bg-surface-abyss py-50 relative overflow-hidden border-b border-slate-lead/20">
       <div className="container max-w-6xl mx-auto px-4 relative z-10">
         
         <div className="text-center mb-16 space-y-6 max-w-3xl mx-auto">
@@ -64,7 +64,7 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group bg-surface-surface border border-slate-lead/20 p-24 rounded-3xl relative flex flex-col justify-between transition-all duration-500 ease-out overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(21,128,61,0.06)] dark:hover:shadow-[0_25px_50px_rgba(21,128,61,0.18)] hover:-translate-y-2.5 hover:border-mercury-blue/30"
+              className="group bg-surface-surface border border-slate-lead/20 p-24 rounded-3xl relative flex flex-col justify-between transition-all duration-500 ease-out overflow-hidden shadow-[0_0_32px_rgba(0,0,0,0.16)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_0_48px_rgba(0,0,0,0.24)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] hover:border-mercury-blue/30"
             >
               {/* Left Accent Gradient Strip */}
               <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-mercury-blue via-emerald-500/70 to-transparent rounded-l-3xl" />
